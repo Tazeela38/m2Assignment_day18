@@ -1,0 +1,31 @@
+// src/components/Counter.js
+import { useState } from "react";
+
+export default function Counter() {
+  // Initialize state with 0
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(prev => prev + 1);
+  const decrement = () => setCount(prev => prev - 1);
+
+  return (
+    <div style={{ 
+      display: "grid", 
+      gap: "12px", 
+      placeItems: "center", 
+      fontFamily: "system-ui, Arial, sans-serif",
+      padding: "24px",
+      border: "1px solid #ddd",
+      borderRadius: "12px",
+      width: "260px",
+      margin: "40px auto"
+    }}>
+      <h2>Counter</h2>
+      <div style={{ fontSize: "2rem", fontWeight: "600" }}>{count}</div>
+      <div style={{ display: "flex", gap: "8px" }}>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+      </div>
+    </div>
+  );
+}
